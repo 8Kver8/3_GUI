@@ -1,0 +1,16 @@
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\bin\Debug\net8.0-windows\3_GUI_3.exe
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\bin\Debug\net8.0-windows\3_GUI_3.deps.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\bin\Debug\net8.0-windows\3_GUI_3.runtimeconfig.json
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\bin\Debug\net8.0-windows\3_GUI_3.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\bin\Debug\net8.0-windows\3_GUI_3.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\_3_GUI_3.Form1.resources
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.csproj.GenerateResource.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.AssemblyInfoInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.AssemblyInfo.cs
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.csproj.CoreCompileInputs.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\refint\3_GUI_3.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.pdb
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.genruntimeconfig.cache
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\ref\3_GUI_3.dll
