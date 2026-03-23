@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-public class Area
+﻿public class Area
 {
     public double ValueInSquareMeters { get; private set; }
 

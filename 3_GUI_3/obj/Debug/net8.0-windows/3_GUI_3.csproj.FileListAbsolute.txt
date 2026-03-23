@@ -14,3 +14,4 @@ C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\n
 C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.pdb
 C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.genruntimeconfig.cache
 C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\ref\3_GUI_3.dll
+C:\Users\verki\OneDrive\Рабочий стол\proj\3_GUI_3\3_GUI_3\obj\Debug\net8.0-windows\3_GUI_3.sourcelink.json

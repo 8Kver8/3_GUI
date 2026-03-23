@@ -26,7 +26,7 @@
         private void ShowResult(Area result, string outUnit)
         {
             double outValue = result.ConvertTo(outUnit);
-            txtResult.Text = outValue.ToString("F2");
+            txtResult.Text = outValue.ToString("F4");
         }
 
         private void ShowCompareResult(int cmp)
