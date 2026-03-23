@@ -17,4 +17,30 @@ public class Area
     {
         ValueInSquareMeters = value * ToSquareMeters[unit];
     }
+
+    public Area Add(Area other)
+    {
+        return new Area(this.ValueInSquareMeters + other.ValueInSquareMeters, "м²");
+    }
+
+    public Area Subtract(Area other)
+    {
+        double result = this.ValueInSquareMeters - other.ValueInSquareMeters;
+        return new Area(result, "м²");
+    }
+
+    public Area Multiply(double number)
+    {
+        return new Area(this.ValueInSquareMeters * number, "м²");
+    }
+
+    public int CompareTo(Area other)
+    {
+        return this.ValueInSquareMeters.CompareTo(other.ValueInSquareMeters);
+    }
+
+    public double ConvertTo(string unit)
+    {
+        return this.ValueInSquareMeters / ToSquareMeters[unit];
+    }
 }
