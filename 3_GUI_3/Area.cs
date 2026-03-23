@@ -17,7 +17,8 @@
 
     public Area Add(Area other)
     {
-        return new Area(this.ValueInSquareMeters + other.ValueInSquareMeters, "м²");
+        double result = this.ValueInSquareMeters + other.ValueInSquareMeters;
+        return new Area(result, "м²");
     }
 
     public Area Subtract(Area other)
@@ -28,7 +29,8 @@
 
     public Area Multiply(double number)
     {
-        return new Area(this.ValueInSquareMeters * number, "м²");
+        double result = this.ValueInSquareMeters * number;
+        return new Area(result, "м²");
     }
 
     public int CompareTo(Area other)

@@ -60,7 +60,7 @@
         }
 
         [TestMethod]
-        public void ConvertTo_AllDirections()
+        public void ConvertTo()
         {
             var m2 = new Area(10000, "м²");
             Assert.AreEqual(100, m2.ConvertTo("сотка"));
