@@ -1,89 +1,71 @@
-﻿namespace _3_GUI.Tests
+﻿using _3_GUI_3;
+
+namespace _3_GUI.Tests
 {
     [TestClass]
     public class AreaTests
     {
         [TestMethod]
-        public void Constructor_AllUnitsConvertToSquareMeters()
+        public void VerboseAndToTest()
         {
-            Assert.AreEqual(1, new Area(1, "м²").ValueInSquareMeters);
-            Assert.AreEqual(100, new Area(1, "сотка").ValueInSquareMeters);
-            Assert.AreEqual(10000, new Area(1, "гектар").ValueInSquareMeters);
-            Assert.AreEqual(10925, new Area(1, "десятина").ValueInSquareMeters);
+            var area = new Area(1, Area.AreaUnit.hectare);
+
+            Assert.AreEqual("1 гектар", area.Verbose());
+            Assert.AreEqual("100 сотка", area.To(Area.AreaUnit.sotka).Verbose());
+            Assert.AreEqual("10000 м²", area.To(Area.AreaUnit.m2).Verbose());
         }
 
         [TestMethod]
-        public void Add_DifferentAndSameUnits()
+        public void MultiplyByNumberTest()
         {
-            var a1 = new Area(1, "гектар");
-            var a2 = new Area(5, "сотка");
-            Assert.AreEqual(10500, a1.Add(a2).ValueInSquareMeters);
+            var area = new Area(3, Area.AreaUnit.sotka);
+            var result = area * 4;
 
-            var a3 = new Area(3, "сотка");
-            var a4 = new Area(2, "сотка");
-            Assert.AreEqual(500, a3.Add(a4).ValueInSquareMeters);
+            Assert.AreEqual("12 сотка", result.Verbose());
         }
 
         [TestMethod]
-        public void Subtract_PositiveAndNegativeResults()
+        public void AddSubtractTwoAreasTest()
         {
-            var a1 = new Area(2, "гектар");
-            var a2 = new Area(5, "сотка");
-            Assert.AreEqual(19500, a1.Subtract(a2).ValueInSquareMeters);
+            var a = new Area(100, Area.AreaUnit.m2);
+            var b = new Area(1, Area.AreaUnit.sotka);
 
-            var a3 = new Area(1, "сотка");
-            var a4 = new Area(1, "гектар");
-            Assert.AreEqual(-9900, a3.Subtract(a4).ValueInSquareMeters);
+            Assert.AreEqual("200 м²", (a + b).Verbose());
+            Assert.AreEqual("2 сотка", (b + a).Verbose());
+            Assert.AreEqual("0 м²", (a - b).Verbose());
+            Assert.AreEqual("0 сотка", (b - a).Verbose());
         }
 
         [TestMethod]
-        public void Multiply_NormalZeroAndFraction()
+        public void AddSubtractDifferentUnitsTest()
         {
-            var a1 = new Area(3, "сотка");
-            Assert.AreEqual(1200, a1.Multiply(4).ValueInSquareMeters);
+            var hectare = new Area(1, Area.AreaUnit.hectare);
+            var sotka = new Area(50, Area.AreaUnit.sotka);
 
-            var a2 = new Area(5, "гектар");
-            Assert.AreEqual(0, a2.Multiply(0).ValueInSquareMeters);
-
-            var a3 = new Area(100, "сотка");
-            Assert.AreEqual(5000, a3.Multiply(0.5).ValueInSquareMeters);
+            Assert.AreEqual("1,5 гектар", (hectare + sotka).Verbose());
+            Assert.AreEqual("-50 сотка", (sotka - hectare).Verbose());
         }
 
         [TestMethod]
-        public void CompareTo_LessEqualGreater()
+        public void CompareToTest()
         {
-            Assert.AreEqual(-1, new Area(1, "гектар").CompareTo(new Area(2, "гектар")));
+            var a = new Area(1, Area.AreaUnit.hectare);
+            var b = new Area(90, Area.AreaUnit.sotka);
+            var c = new Area(100, Area.AreaUnit.sotka);
 
-            Assert.AreEqual(0, new Area(100, "сотка").CompareTo(new Area(1, "гектар")));
-
-            Assert.AreEqual(1, new Area(2, "гектар").CompareTo(new Area(1, "гектар")));
+            Assert.AreEqual(1, a.CompareTo(b));
+            Assert.AreEqual(-1, b.CompareTo(a));
+            Assert.AreEqual(0, a.CompareTo(c));
         }
 
         [TestMethod]
-        public void ConvertTo()
+        public void ConvertToForGUITest()
         {
-            var m2 = new Area(10000, "м²");
-            Assert.AreEqual(100, m2.ConvertTo("сотка"));
-            Assert.AreEqual(1, m2.ConvertTo("гектар"));
+            var area = new Area(1, Area.AreaUnit.hectare);
 
-            var ha = new Area(2, "гектар");
-            Assert.AreEqual(200, ha.ConvertTo("сотка"));
-            Assert.AreEqual(20000, ha.ConvertTo("м²"));
-
-            var sotka = new Area(109, "сотка");
-            Assert.AreEqual(0.997, sotka.ConvertTo("десятина"), 0.001);
-        }
-
-        [TestMethod]
-        public void AddThenConvert()
-        {
-            var a1 = new Area(1, "гектар");
-            var a2 = new Area(100, "сотка");
-            var sum = a1.Add(a2);
-
-            Assert.AreEqual(2, sum.ConvertTo("гектар"));
-            Assert.AreEqual(200, sum.ConvertTo("сотка"));
-            Assert.AreEqual(1.83, sum.ConvertTo("десятина"), 0.01);
+            Assert.AreEqual(100, area.ConvertTo("сотка"));
+            Assert.AreEqual(10000, area.ConvertTo("м²"));
+            Assert.AreEqual(1, area.ConvertTo("гектар"));
         }
     }
 }

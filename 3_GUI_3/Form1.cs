@@ -16,17 +16,41 @@
             cmbOperation.SelectedIndex = 0;
         }
 
+        private Area.AreaUnit ParseAreaUnit(string unitName)
+        {
+            Area.AreaUnit unit;
+            switch (unitName)
+            {
+                case "м²":
+                    unit = Area.AreaUnit.m2;
+                    break;
+                case "сотка":
+                    unit = Area.AreaUnit.sotka;
+                    break;
+                case "гектар":
+                    unit = Area.AreaUnit.hectare;
+                    break;
+                case "десятина":
+                    unit = Area.AreaUnit.desyatina;
+                    break;
+                default:
+                    unit = Area.AreaUnit.m2;
+                    break;
+            }
+            return unit;
+        }
+
         private Area GetAreaFromInput(TextBox txt, ComboBox cmb)
         {
             double value = double.Parse(txt.Text);
-            string unit = cmb.Text;
+            Area.AreaUnit unit = ParseAreaUnit(cmb.Text);
             return new Area(value, unit);
         }
 
         private void ShowResult(Area result, string outUnit)
         {
             double outValue = result.ConvertTo(outUnit);
-            txtResult.Text = outValue.ToString("F4");
+            txtResult.Text = outValue.ToString("F2");
         }
 
         private void ShowCompareResult(int cmp)
@@ -57,8 +81,7 @@
                 if (operation == "×")
                 {
                     double multiplier = double.Parse(txtAreaB.Text);
-
-                    Area result = areaA.Multiply(multiplier);
+                    Area result = areaA * multiplier;
                     ShowResult(result, resultUnit);
                     return;
                 }
@@ -68,12 +91,10 @@
                 switch (operation)
                 {
                     case "+":
-                        Area sum = areaA.Add(areaB);
-                        ShowResult(sum, resultUnit);
+                        ShowResult(areaA + areaB, resultUnit);
                         break;
                     case "-":
-                        Area diff = areaA.Subtract(areaB);
-                        ShowResult(diff, resultUnit);
+                        ShowResult(areaA - areaB, resultUnit);
                         break;
                     case "Сравнить":
                         int cmp = areaA.CompareTo(areaB);
