@@ -21,7 +21,7 @@ namespace _3_GUI.Tests
             var area = new Area(3, Area.AreaUnit.sotka);
             var result = area * 4;
 
-            Assert.AreEqual("12 сотка", result.Verbose());
+            Assert.AreEqual(new Area(12, Area.AreaUnit.sotka), result);
         }
 
         [TestMethod]
@@ -30,10 +30,10 @@ namespace _3_GUI.Tests
             var a = new Area(100, Area.AreaUnit.m2);
             var b = new Area(1, Area.AreaUnit.sotka);
 
-            Assert.AreEqual("200 м²", (a + b).Verbose());
-            Assert.AreEqual("2 сотка", (b + a).Verbose());
-            Assert.AreEqual("0 м²", (a - b).Verbose());
-            Assert.AreEqual("0 сотка", (b - a).Verbose());
+            Assert.AreEqual(new Area(200, Area.AreaUnit.m2), a + b);
+            Assert.AreEqual(new Area(2, Area.AreaUnit.sotka), b + a);
+            Assert.AreEqual(new Area(0, Area.AreaUnit.m2), a - b);
+            Assert.AreEqual(new Area(0, Area.AreaUnit.sotka), b - a);
         }
 
         [TestMethod]
@@ -42,8 +42,8 @@ namespace _3_GUI.Tests
             var hectare = new Area(1, Area.AreaUnit.hectare);
             var sotka = new Area(50, Area.AreaUnit.sotka);
 
-            Assert.AreEqual("1,5 гектар", (hectare + sotka).Verbose());
-            Assert.AreEqual("-50 сотка", (sotka - hectare).Verbose());
+            Assert.AreEqual(new Area(1.5, Area.AreaUnit.hectare), hectare + sotka);
+            Assert.AreEqual(new Area(-50, Area.AreaUnit.sotka), sotka - hectare);
         }
 
         [TestMethod]

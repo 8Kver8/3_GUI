@@ -142,5 +142,18 @@
             }
             return this.To(targetUnit).value;
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            double thisInM2 = this.To(AreaUnit.m2).value;
+            double otherInM2 = (obj as Area).To(AreaUnit.m2).value;
+
+            return thisInM2 == otherInM2;
+        }
     }
 }
